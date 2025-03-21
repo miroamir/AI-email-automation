@@ -50,3 +50,27 @@ All without writing a single word.
 1. Clone the repo  
 2. Create a `.env` file like this:
 
+
+EMAIL_ADDRESS=you@gmail.com EMAIL_PASSWORD=your_app_password OPENAI_API_KEY=your_openai_key
+
+go
+Copy
+Edit
+
+3. Run the FastAPI app:
+
+```bash
+uvicorn main:app --reload
+Test it:
+bash
+Copy
+Edit
+curl -X POST http://localhost:8000/send_email/ \
+-H "Content-Type: application/json" \
+-d '{
+  "recipient": "someone@example.com",
+  "candidate_name": "Alex",
+  "role": "Software Engineer",
+  "company": "TechCorp",
+  "recruiter_name": "John"
+}'
