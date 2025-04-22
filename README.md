@@ -1,6 +1,6 @@
-# AutoMiro: AI Recruitment Email Automation 💼📧
+# AI Recruitment Email Automation 💼📧
 
-This is a custom AI-powered recruitment outreach tool — built as one of many automation services under the **AutoMiro** platform.
+This is a custom AI-powered recruitment outreach tool — built as one of many automation services under the **MiroMate** platform.
 
 It uses GPT-4 to write highly personalized emails and sends them via Gmail SMTP — removing all manual effort for recruiters and helping them get faster replies, better candidates, and more placements.
 
@@ -10,21 +10,21 @@ It uses GPT-4 to write highly personalized emails and sends them via Gmail SMTP 
 
 ## 🚀 What It Does
 
-- ✅ Writes recruitment emails using GPT-4o
-- ✅ Sends messages automatically through Gmail
-- ✅ Uses your real tone, company info, and candidate data
-- ✅ Saves hours of repetitive work
+- ✅ Writes recruitment emails using GPT-4o  
+- ✅ Sends messages automatically through Gmail  
+- ✅ Uses your real tone, company info, and candidate data  
+- ✅ Saves hours of repetitive work  
 - ✅ Designed for real outreach, not spam
 
 ---
 
 ## 🧠 Powered By
 
-- Python 3.10
-- FastAPI
-- OpenAI (GPT-4o)
-- Gmail SMTP (with secure App Passwords)
-- Pydantic, smtplib, dotenv
+- Python 3.10  
+- FastAPI  
+- OpenAI (GPT-4o)  
+- Gmail SMTP (App Passwords)  
+- Pydantic, `smtplib`, `python-dotenv`
 
 ---
 
@@ -37,7 +37,7 @@ Recruiter inputs:
 - Company: *TechCorp*  
 - Recruiter: *Samantha*
 
-AutoMiro instantly generates and sends a personalized message like:
+The tool instantly generates and sends a personalized message like:
 
 > “Hi Alex, I’m Samantha from TechCorp. I came across your profile and was impressed by your background in React. We’re looking for a Frontend Developer and thought you’d be a great fit…”
 
@@ -48,23 +48,15 @@ All without writing a single word.
 ## 🛠️ How to Run Locally
 
 1. Clone the repo  
-2. Create a `.env` file like this:
-
-
-EMAIL_ADDRESS=you@gmail.com EMAIL_PASSWORD=your_app_password OPENAI_API_KEY=your_openai_key
-
-go
-Copy
-Edit
-
-3. Run the FastAPI app:
-
+2. Create a `.env` file using the template below  
+3. Install dependencies:
 ```bash
+pip install -r requirements.txt
+
+# Start the app
 uvicorn main:app --reload
-Test it:
-bash
-Copy
-Edit
+
+# Send a test email
 curl -X POST http://localhost:8000/send_email/ \
 -H "Content-Type: application/json" \
 -d '{
@@ -74,3 +66,31 @@ curl -X POST http://localhost:8000/send_email/ \
   "company": "TechCorp",
   "recruiter_name": "John"
 }'
+
+---
+
+## 📤 Sample Output
+
+Hi Alex,
+
+I’m Samantha from TechCorp. I came across your profile and was really impressed by your background in React and frontend development. We're currently hiring for a Frontend Developer role, and based on your experience, I think you'd be a great fit.
+
+Would love to connect if you're open to chatting more!
+
+Warm regards,
+Samantha
+
+---
+
+## ⚠️ Disclaimer
+
+This is a simplified, open-source version of an internal project built as part of a larger AI automation platform (AutoMiro).  
+Some features have been removed for public demonstration.
+
+---
+
+## 🙌 Built By
+
+Created by **Amir Abdel Nour** — AI Automation Engineer  
+🔗 [LinkedIn](https://www.linkedin.com/in/amirabdelnour/)  
+📫 [miroamir422@gmail.com](mailto:miroamir422@gmail.com)
